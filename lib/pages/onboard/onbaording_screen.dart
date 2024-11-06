@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/route_manager.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:sporthub/constants/colors.dart';
+import 'package:sporthub/pages/auth/choose_club.dart';
 import 'package:sporthub/pages/onboard/widgets/page_view_container_widget.dart';
+import 'package:sporthub/widgets/background_widget.dart';
+import 'package:sporthub/widgets/primary_button.dart';
 
 class OnbaordingScreen extends StatefulWidget {
   const OnbaordingScreen({super.key});
@@ -16,16 +21,10 @@ class _OnbaordingScreenState extends State<OnbaordingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              'assets/images/splash.png',
-            ),
-            fit: BoxFit.fill,
-          ),
-        ),
-        child: Column(
+      body: SizedBox(
+        width: double.infinity,
+        child: BackgroundWidget(
+          child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 80.h,),
@@ -90,21 +89,11 @@ class _OnbaordingScreenState extends State<OnbaordingScreen> {
                       SizedBox(
                         width: 240.w,
                         height: 60.h,
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xff594FEF),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                          child: Text(
-                            'Get Started',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20.sp,
-                            ),
-                          ),
+                        child: PrimaryButton(
+                          color: primaryColor,
+                          onPressed: () {
+                            Get.to(() => const ChooseClubPage());
+                          },
                         ),
                       ),
                       Text(
@@ -123,7 +112,9 @@ class _OnbaordingScreenState extends State<OnbaordingScreen> {
             )
           ],
         ),
+        )
       ),
     );
   }
 }
+
