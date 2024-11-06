@@ -115,6 +115,11 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_web_plugins:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   get:
     dependency: "direct main"
     description:
@@ -211,6 +216,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.15.0"
+  otp_pin_field:
+    dependency: "direct main"
+    description:
+      name: otp_pin_field
+      sha256: "9f2dbe1bd799a770ead7bf5be3d18bf2a1ab6e76e7d6e2ff61e3b980fb3b357d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.3.1"
   path:
     dependency: transitive
     description:
